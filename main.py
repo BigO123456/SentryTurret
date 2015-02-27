@@ -176,10 +176,6 @@ def main(display) :
                 cam.quit()
                 cv2.destroyAllWindows()
                 break
-            elif KeyboardPoller.key=="f": #reset all
-                turret.fire()
-                print "Firing"
-                break
             elif KeyboardPoller.key==" ": #reset all
                 print "Reset."
                 Sound.Play("/home/pi/robot/snd-disarmed.wav").thread.start()
@@ -201,6 +197,9 @@ def main(display) :
                     rgbtarget = [int(cv2.mean(framecenter)[0]), int(cv2.mean(framecenter)[1]), int(cv2.mean(framecenter)[2])]
                 if KeyboardPoller.key=="p": #toggle armed
                     turret.armed = not turret.armed       
+                if elif KeyboardPoller.key=="f": #reset all
+                    turret.fire()
+                    print "Firing"
                 if KeyboardPoller.key=="l": #target trigger sensitivity
                     turret.firesensitivity += .01
                 if KeyboardPoller.key=="m":
