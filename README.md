@@ -31,7 +31,4 @@ The program starts a thread for the turret which is continually updated with tar
 
 ---
 
-The working example was built on RaspberryPi with Raspian and OpenCV(python) 2.4, using GPIO pins connected to a servo driver and servos from Adafruit. Tutorial here: https://learn.adafruit.com/adafruit-16-channel-servo-driver-with-raspberry-pi
-
-As of 5/1/2014, I believe a BeagleBone Black would be preferable platform due to faster CPU and on-board PWM outputs (meaning no separate servo driver needed).
-
+The working example was built on RaspberryPi with Raspian and OpenCV(python) 2.4, using GPIO pins connected to a servo hat from adafruit. https://learn.adafruit.com/adafruit-16-channel-pwm-servo-hat-for-raspberry-pi/overview
