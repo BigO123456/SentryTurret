@@ -176,6 +176,10 @@ def main(display) :
                 cam.quit()
                 cv2.destroyAllWindows()
                 break
+            elif KeyboardPoller.key=="f": #reset all
+                turret.fire()
+                print "Firing"
+                break
             elif KeyboardPoller.key==" ": #reset all
                 print "Reset."
                 Sound.Play("/home/pi/robot/snd-disarmed.wav").thread.start()
