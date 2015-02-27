@@ -37,9 +37,9 @@ class Controller(threading.Thread) :
         threading.Thread.__init__(self)
         
     def fire(self): #pull trigger
-        GPIO.output(Motor1A,GPIO.HIGH)
+        GPIO.output(self.Motor1A,GPIO.HIGH)
         sleep(2)
-        GPIO.output(Motor1A,GPIO.LOW)
+        GPIO.output(self.Motor1A,GPIO.LOW)
         Timer.Countdown(self.triggerwait, self.triggertimer).thread.start()  #between fire
         
     def recenter(self):
