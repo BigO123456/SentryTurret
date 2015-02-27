@@ -16,7 +16,7 @@ class Controller(threading.Thread) :
         self.servoX = 0 #pan servo
         self.servoY = 3 #tilt servo
         self.Motor1A = 17
-        GPIO.setup(Motor1A,GPIO.OUT)
+        GPIO.setup(self.Motor1A,GPIO.OUT)
         self.driver = driver.MyDriverWrapper.ServoDriver()
         #=========== 
         self.center = [0.0, -0.2] #where to recenter
