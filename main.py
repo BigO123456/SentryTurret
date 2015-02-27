@@ -99,7 +99,7 @@ def main(display) :
             #10 second arm warning
             if not turret.armed: 
                 if not warningstarted:
-                    Timer.Countdown(10, warningtimer).thread.start()
+                    Timer.Countdown(1, warningtimer).thread.start()
                     sleep(.1) #timer set
                     warningstarted = True    
                     Sound.Play("/home/pi/robot/snd-warning.wav").thread.start()
