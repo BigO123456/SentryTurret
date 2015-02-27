@@ -16,6 +16,7 @@ class Controller(threading.Thread) :
         self.servoX = 0 #pan servo
         self.servoY = 3 #tilt servo
         self.Motor1A = 17
+        GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.Motor1A,GPIO.OUT)
         self.driver = driver.MyDriverWrapper.ServoDriver()
         #=========== 
