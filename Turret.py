@@ -12,7 +12,7 @@ class Controller(threading.Thread) :
   
     def __init__(self):
         # My Servo pins
-        self.servoX = 15 #pan servo
+        self.servoX = 0 #pan servo
         self.servoY = 3 #tilt servo
         self.servoF = 1 #trigger servo
         self.driver = driver.MyDriverWrapper.ServoDriver()
