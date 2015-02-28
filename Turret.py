@@ -19,8 +19,6 @@ class Controller(threading.Thread) :
         self.servoY = 3 #tilt servo
         self.Motor1A = 21
       	self.ser = serial.Serial('/dev/ttyACM0', 9600)
-	#GPIO.setmode(GPIO.BCM)
-        #GPIO.setup(self.Motor1A,GPIO.OUT)
         self.driver = driver.MyDriverWrapper.ServoDriver()
         #=========== 
         self.center = [0.0, -0.2] #where to recenter
