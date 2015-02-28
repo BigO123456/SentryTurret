@@ -3,12 +3,6 @@
 This project licensed under GNU GENERAL PUBLIC LICENSE
 https://www.gnu.org/licenses/gpl.txt
 
-Video of a working example prior to my updating: 
-
-<a href="http://www.youtube.com/watch?v=bgmDVvE1pLw
-" target="_blank"><img src="http://img.youtube.com/vi/bgmDVvE1pLw/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
-
 Attach [Raspberry pi and Arduino Uno](http://i.imgur.com/sse6CTF.jpg) that has a relay shield with usb cable
 
 A sentry turret style robot which will detect motion, then track and fire at the object. The robot's "turret" is rotated by two servos (X/pan axis and Y/tilt axis). The "eye"(webcam) and "gun" of the robot should be mounted on the turret. The arduino is attached by usb to the raspberry pi and is given the signal to fire over serial usb.
