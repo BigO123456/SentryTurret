@@ -3,7 +3,6 @@
 import driver.MyDriverWrapper 
 import threading
 import Timer
-import RPi.GPIO as GPIO
 from time import sleep
 import serial
  
