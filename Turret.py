@@ -5,7 +5,9 @@ import threading
 import Timer
 import RPi.GPIO as GPIO
 from time import sleep
-        
+import serial
+ 
+  
 #globals
 threadquit = threading.Event()
 
@@ -16,8 +18,9 @@ class Controller(threading.Thread) :
         self.servoX = 0 #pan servo
         self.servoY = 3 #tilt servo
         self.Motor1A = 21
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(self.Motor1A,GPIO.OUT)
+      	self.ser = serial.Serial('/dev/ttyACM0', 9600)
+	#GPIO.setmode(GPIO.BCM)
+        #GPIO.setup(self.Motor1A,GPIO.OUT)
         self.driver = driver.MyDriverWrapper.ServoDriver()
         #=========== 
         self.center = [0.0, -0.2] #where to recenter
@@ -37,9 +40,7 @@ class Controller(threading.Thread) :
         threading.Thread.__init__(self)
         
     def fire(self): #pull trigger
-        GPIO.output(self.Motor1A,GPIO.HIGH)
-        sleep(2)
-        GPIO.output(self.Motor1A,GPIO.LOW)
+	self.ser.write('1')
         Timer.Countdown(self.triggerwait, self.triggertimer).thread.start()  #between fire
         
     def recenter(self):
