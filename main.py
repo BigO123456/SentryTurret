@@ -102,10 +102,10 @@ def main(display) :
                     Timer.Countdown(1, warningtimer).thread.start()
                     sleep(.1) #timer set
                     warningstarted = True    
-                    Sound.Play("/home/pi/robot/snd-warning.wav").thread.start()
+                    Sound.Play("/home/pi/SentryTurret/snd-warning.wav").thread.start()
                 elif not warningtimer.isSet():
                     warningtimer.set() #once per reset
-                    Sound.Play("/home/pi/robot/snd-armed.wav").thread.start()
+                    Sound.Play("/home/pi/SentryTurret/snd-armed.wav").thread.start()
                     turret.armed = True
             #find best contour in hsv range
             framehsv = cv2.cvtColor(cam.frame, cv2.COLOR_BGR2HSV)
@@ -178,7 +178,7 @@ def main(display) :
                 break
             elif KeyboardPoller.key==" ": #reset all
                 print "Reset."
-                Sound.Play("/home/pi/robot/snd-disarmed.wav").thread.start()
+                Sound.Play("/home/pi/SentryTurret/snd-disarmed.wav").thread.start()
                 hsvtarget = None
                 turret.armed = False
                 avgstarted = False
@@ -186,7 +186,7 @@ def main(display) :
                 turret.recenter()
             elif KeyboardPoller.key=="1": #start motion detect
                 print "Start motion detect."
-                Sound.Play("/home/pi/robot/snd-motion.wav").thread.start()
+                Sound.Play("/home/pi/SentryTurret/snd-motion.wav").thread.start()
                 modemotion = True
             else: #manual/adjust/toggle
                 if KeyboardPoller.key=="2": #sample center of image
