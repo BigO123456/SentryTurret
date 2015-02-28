@@ -10,8 +10,6 @@ import Capture
 import Timer
 import threading
 from time import sleep
-import Sound
- 
 # ===========================================================================
 # This is the main executable for the robot.
 # run "$python main.py" with 1(display) or 0(no display[default])
