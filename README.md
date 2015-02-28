@@ -12,7 +12,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 A sentry turret style robot which will detect motion, then track and fire at the object. The robot's "turret" is rotated by two servos (X/pan axis and Y/tilt axis). The "eye"(webcam) and "gun" of the robot should be mounted on the turret. The arduino is attached by usb to the raspberry pi and is given the signal to fire over serial usb.
 
 
-When activated, the robot will initialize an average image and wait to detect motion above a threshold size. It will target the mean HSV of a moving object and begin blob detection to center the camera's view (using turret servos) on the object. When the object is centered, it will fire by pulling the trigger servo. 
+When activated, the robot will initialize an average image and wait to detect motion above a threshold size. It will target the mean HSV of a moving object and begin blob detection to center the camera's view (using turret servos) on the object. When the object is centered, it will fire by sending a serial signal to the arduino.
 
 See main.py for further comments.
 
