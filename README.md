@@ -10,7 +10,7 @@ Video of a working example prior to my updating:
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 Attach raspberry pi to arduino uno that has a relay shield with usb cable
-[Raspberry pi and Arduino](http://i.imgur.com/sse6CTF.jpg)
+!Raspberry pi and Arduino](http://i.imgur.com/sse6CTF.jpg)
 
 A sentry turret style robot which will detect motion, then track and fire at the object. The robot's "turret" is rotated by two servos (X/pan axis and Y/tilt axis). The "eye"(webcam) and "gun" of the robot should be mounted on the turret. The arduino is attached by usb to the raspberry pi and is given the signal to fire over serial usb.
 
