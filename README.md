@@ -7,7 +7,8 @@ Attach the Raspberry pi servo hat to the Raspberry pi, x-axis servo on 0 and y-a
 
 Upload the arduinosketch.ino to your arduino uno with relay shield
 
-Attach [Raspberry pi and Arduino Uno](http://i.imgur.com/sse6CTF.jpg) with usb cable
+![Raspberry pi and Arduino Uno](http://i.imgur.com/sse6CTF.jpg "Connected") 
+Attach with usb cable
 
 A sentry turret style robot which will detect motion, then track and fire at the object. The robot's "turret" is rotated by two servos (X/pan axis and Y/tilt axis). The "eye"(webcam) and "gun" of the robot should be mounted on the turret. The arduino is attached by usb to the raspberry pi and is given the signal to fire over serial usb.
 
