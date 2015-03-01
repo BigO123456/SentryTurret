@@ -182,42 +182,41 @@ def main(display) :
             elif KeyboardPoller.key=="1": #start motion detect
                 print "Start motion detect."
                 modemotion = True
-            else: #manual/adjust/toggle
-                if KeyboardPoller.key=="2": #sample center of image
-                    print "Sample center HSV."                       
-                    framecenter = cam.frame[(dims.h/2)-dims.sampleradius:(dims.h/2)+dims.sampleradius, (dims.w/2)-dims.sampleradius:(dims.w/2)+dims.sampleradius]
-                    framecenterhsv = cv2.cvtColor(framecenter, cv2.COLOR_BGR2HSV)
-                    hsvtarget = [int(cv2.mean(framecenterhsv)[0]), int(cv2.mean(framecenterhsv)[1]), int(cv2.mean(framecenterhsv)[2])]
-                    rgbtarget = [int(cv2.mean(framecenter)[0]), int(cv2.mean(framecenter)[1]), int(cv2.mean(framecenter)[2])]
-                if KeyboardPoller.key=="p": #toggle armed
-                    turret.armed = not turret.armed       
-                if KeyboardPoller.key=="f": #reset all
-                    turret.fire()
-                    print "Firing"
-                if KeyboardPoller.key=="l": #target trigger sensitivity
-                    turret.firesensitivity += .01
-                if KeyboardPoller.key=="m":
-                    turret.firesensitivity -= .01                    
-                if KeyboardPoller.key=="a": #hue
-                    dims.hsvrange[0] += dims.adjuststep
-                if KeyboardPoller.key=="z":
-                    dims.hsvrange[0] -= dims.adjuststep
-                if KeyboardPoller.key=="s": #sat
-                    dims.hsvrange[1] += dims.adjuststep
-                if KeyboardPoller.key=="x":
-                    dims.hsvrange[1] -= dims.adjuststep
-                if KeyboardPoller.key=="d": #val
-                    dims.hsvrange[2] += dims.adjuststep
-                if KeyboardPoller.key=="c":
-                    dims.hsvrange[2] -= dims.adjuststep
-                if KeyboardPoller.key=="f": #area
-                    dims.areathreshold += dims.adjuststep
-                if KeyboardPoller.key=="v":
-                    dims.areathreshold -= dims.adjuststep                    
+            if KeyboardPoller.key=="2": #sample center of image
+                print "Sample center HSV."                       
+                framecenter = cam.frame[(dims.h/2)-dims.sampleradius:(dims.h/2)+dims.sampleradius, (dims.w/2)-dims.sampleradius:(dims.w/2)+dims.sampleradius]
+                framecenterhsv = cv2.cvtColor(framecenter, cv2.COLOR_BGR2HSV)
+                hsvtarget = [int(cv2.mean(framecenterhsv)[0]), int(cv2.mean(framecenterhsv)[1]), int(cv2.mean(framecenterhsv)[2])]
+                rgbtarget = [int(cv2.mean(framecenter)[0]), int(cv2.mean(framecenter)[1]), int(cv2.mean(framecenter)[2])]
+            if KeyboardPoller.key=="p": #toggle armed
+                turret.armed = not turret.armed       
+            if KeyboardPoller.key=="f": #reset all
+                turret.fire()
+                print "Firing"
+            if KeyboardPoller.key=="l": #target trigger sensitivity
+                turret.firesensitivity += .01
+            if KeyboardPoller.key=="m":
+                turret.firesensitivity -= .01                    
+            if KeyboardPoller.key=="a": #hue
+                dims.hsvrange[0] += dims.adjuststep
+            if KeyboardPoller.key=="z":
+                dims.hsvrange[0] -= dims.adjuststep
+            if KeyboardPoller.key=="s": #sat
+                dims.hsvrange[1] += dims.adjuststep
+            if KeyboardPoller.key=="x":
+                dims.hsvrange[1] -= dims.adjuststep
+            if KeyboardPoller.key=="d": #val
+                dims.hsvrange[2] += dims.adjuststep
+            if KeyboardPoller.key=="c":
+                dims.hsvrange[2] -= dims.adjuststep
+            if KeyboardPoller.key=="f": #area
+                dims.areathreshold += dims.adjuststep
+            if KeyboardPoller.key=="v":
+                dims.areathreshold -= dims.adjuststep                    
                 #adjust target settings/range
-                if not hsvtarget == None:
-                    dims.setHsvRange(hsvtarget)
-                    print ">> HSV:",hsvtarget[0],hsvtarget[1],hsvtarget[2],"Range:",dims.hsvrange[0],dims.hsvrange[1],dims.hsvrange[2],"Area:",dims.areathreshold,"Armed:",turret.armed,turret.firesensitivity
+            if not hsvtarget == None:
+                dims.setHsvRange(hsvtarget)
+                print ">> HSV:",hsvtarget[0],hsvtarget[1],hsvtarget[2],"Range:",dims.hsvrange[0],dims.hsvrange[1],dims.hsvrange[2],"Area:",dims.areathreshold,"Armed:",turret.armed,turret.firesensitivity
             #reset key polling
             KeyboardPoller.WaitKey().thread.start()
         
