@@ -175,7 +175,7 @@ def main(display) :
             elif KeyboardPoller.key==" ": #reset all
                 print "Reset."
                 hsvtarget = None
-                turret.armed = False
+                turret.armed = True
                 avgstarted = False
                 warningstarted = False
                 turret.recenter()
