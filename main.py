@@ -166,7 +166,7 @@ def main(display) :
                         
         #key handler
         if KeyboardPoller.keypressed.isSet():  
-            if KeyboardPoller.key=="123"
+            if KeyboardPoller.key=="a"
                 turret.moveLeft()
             elif KeyboardPoller.key=="q": #quit
                 print "Exiting..."
@@ -199,8 +199,8 @@ def main(display) :
                 turret.firesensitivity += .01
             if KeyboardPoller.key=="m":
                 turret.firesensitivity -= .01                    
-            if KeyboardPoller.key=="a": #hue
-                dims.hsvrange[0] += dims.adjuststep
+            #if KeyboardPoller.key=="a": #hue
+            #    dims.hsvrange[0] += dims.adjuststep
             if KeyboardPoller.key=="z":
                 dims.hsvrange[0] -= dims.adjuststep
             if KeyboardPoller.key=="s": #sat
