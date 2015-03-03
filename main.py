@@ -166,7 +166,7 @@ def main(display) :
                         
         #key handler
         if KeyboardPoller.keypressed.isSet():  
-            if KeyboardPoller.key=="123":
+            if KeyboardPoller.key=="a":
                 turret.moveLeft()
             elif KeyboardPoller.key=="q": #quit
                 print "Exiting..."
