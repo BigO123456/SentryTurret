@@ -199,6 +199,7 @@ def main(display) :
                 turret.firesensitivity -= .01                    
             if KeyboardPoller.key=="a": #hue
                 dims.hsvrange[0] += dims.adjuststep
+                turret.moveLeft()
             if KeyboardPoller.key=="z":
                 dims.hsvrange[0] -= dims.adjuststep
             if KeyboardPoller.key=="s": #sat
