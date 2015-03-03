@@ -67,6 +67,9 @@ class Controller(threading.Thread) :
                 if not self.deltaxy[0] == 0:
                     self.fire()
                     
+    def moveLeft(self):
+    	self.driver.move(self.servoX, self.xy[0]+1)
+                    
     def quit(self): #cleanup
         global threadquit
         self.recenter()
