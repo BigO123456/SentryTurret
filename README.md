@@ -5,7 +5,7 @@ https://www.gnu.org/licenses/gpl.txt
 
 Attach the Raspberry pi servo hat to the Raspberry pi, x-axis servo on 0 and y-axis servo on 3 
 
-Upload the arduinosketch.ino to your arduino uno with relay shield
+connect the relay board to gnd and vin and gpio 24
 
 ![Raspberry pi and Arduino Uno](http://i.imgur.com/sse6CTF.jpg "Connected") 
 Attach Raspberry pi to Arduino Uno with usb cable
