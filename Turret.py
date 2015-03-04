@@ -19,7 +19,7 @@ class Controller(threading.Thread) :
         self.servoX = 0 #pan servo
         self.servoY = 3 #tilt servo
         self.Motor1A = 21
-      	self.ser = serial.Serial('/dev/ttyACM0', 9600)
+      	#self.ser = serial.Serial('/dev/ttyACM0', 9600)
         self.driver = driver.MyDriverWrapper.ServoDriver()
         #=========== 
         self.center = [0.0, -0.2] #where to recenter
@@ -39,10 +39,9 @@ class Controller(threading.Thread) :
         threading.Thread.__init__(self)
         
     def fire(self): #pull trigger
-	self.ser.write('1')
 	GPIO.setup(18, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
 	GPIO.output(18,True) ## Turn on GPIO pin 7
-	sleep(5)
+	sleep(3)
 	GPIO.output(18,False) ## Turn on GPIO pin 7
         Timer.Countdown(self.triggerwait, self.triggertimer).thread.start()  #between fire
         
