@@ -193,8 +193,9 @@ def main(display) :
             if KeyboardPoller.key=="p": #toggle armed
                 turret.armed = not turret.armed       
             if KeyboardPoller.key=="f": #reset all
-                turret.fire()
                 print "Firing"
+                turret.fire()
+                print "Fired"
             if KeyboardPoller.key=="l": #target trigger sensitivity
                 turret.firesensitivity += .01
             if KeyboardPoller.key=="m":
