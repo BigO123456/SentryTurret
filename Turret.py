@@ -39,10 +39,10 @@ class Controller(threading.Thread) :
         threading.Thread.__init__(self)
         
     def fire(self): #pull trigger
-	GPIO.setup(18, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
-	GPIO.output(18,True) ## Turn on GPIO pin 7
+	GPIO.setup(18, GPIO.OUT) ## Setup GPIO Pin 24 to OUT
+	GPIO.output(18,True) ## Turn on GPIO pin 24
 	sleep(3)
-	GPIO.output(18,False) ## Turn on GPIO pin 7
+	GPIO.output(18,False) ## Turn off GPIO pin 24
         Timer.Countdown(self.triggerwait, self.triggertimer).thread.start()  #between fire
         
     def recenter(self):
