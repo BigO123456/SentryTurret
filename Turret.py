@@ -16,9 +16,10 @@ class Controller(threading.Thread) :
     def __init__(self):
         # My Servo pins
         GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
+        GPIO.setwarnings(False)
         self.servoX = 0 #pan servo
         self.servoY = 3 #tilt servo
-        self.Motor1A = 21
+        #self.Motor1A = 21
       	#self.ser = serial.Serial('/dev/ttyACM0', 9600)
         self.driver = driver.MyDriverWrapper.ServoDriver()
         #=========== 
