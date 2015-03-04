@@ -5,7 +5,8 @@ import threading
 import Timer
 from time import sleep
 import serial
- 
+import RPi.GPIO as GPIO ## Import GPIO library
+
   
 #globals
 threadquit = threading.Event()
@@ -14,6 +15,7 @@ class Controller(threading.Thread) :
   
     def __init__(self):
         # My Servo pins
+        GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
         self.servoX = 0 #pan servo
         self.servoY = 3 #tilt servo
         self.Motor1A = 21
@@ -38,6 +40,10 @@ class Controller(threading.Thread) :
         
     def fire(self): #pull trigger
 	self.ser.write('1')
+	GPIO.setup(18, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
+	GPIO.output(18,True) ## Turn on GPIO pin 7
+	sleep(5)
+	GPIO.output(18,False) ## Turn on GPIO pin 7
         Timer.Countdown(self.triggerwait, self.triggertimer).thread.start()  #between fire
         
     def recenter(self):
