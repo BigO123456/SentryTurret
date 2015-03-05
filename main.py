@@ -181,6 +181,9 @@ def main(display) :
                 avgstarted = False
                 warningstarted = False
                 turret.recenter()
+            if KeyboardPoller.key=="r": #sample center of image
+                print "reloading"
+                turret.reload()
             elif KeyboardPoller.key=="1": #start motion detect
                 print "Start motion detect."
                 modemotion = True
