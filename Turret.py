@@ -45,6 +45,9 @@ class Controller(threading.Thread) :
 	sleep(3)
 	GPIO.output(18,False) ## Turn off GPIO pin 24
         Timer.Countdown(self.triggerwait, self.triggertimer).thread.start()  #between fire
+    
+    def reloadGun(self):
+    	self.driver.move(self.servoY, self.xy[1]+1)
         
     def recenter(self):
         #zero to center
