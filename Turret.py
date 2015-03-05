@@ -47,7 +47,7 @@ class Controller(threading.Thread) :
         Timer.Countdown(self.triggerwait, self.triggertimer).thread.start()  #between fire
     
     def reloadGun(self):
-    	self.driver.move(self.servoY, self.xy[1]+1)
+    	self.driver.move(self.servoY, -1)
         
     def recenter(self):
         #zero to center
