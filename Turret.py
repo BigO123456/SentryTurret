@@ -23,7 +23,7 @@ class Controller(threading.Thread) :
       	#self.ser = serial.Serial('/dev/ttyACM0', 9600)
         self.driver = driver.MyDriverWrapper.ServoDriver()
         #=========== 
-        self.center = [0.0, -0.2] #where to recenter
+        self.center = [0.0, 0.0] #where to recenter
         self.fps = 1.5 #frame per seconds  *** movement is wild if set too high ***
         self.stepsleep = 0.05 #time per step (smoothness)
         self.firesensitivity = .02 #how trigger happy
