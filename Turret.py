@@ -77,7 +77,7 @@ class Controller(threading.Thread) :
                     self.fire()
                     
     def moveLeft(self):
-    	self.driver.move(self.servoX, self.xy[0]+1)
+    	self.driver.move(self.servoX, self.xy[0]-1)
                     
     def quit(self): #cleanup
         global threadquit
