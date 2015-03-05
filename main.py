@@ -183,7 +183,7 @@ def main(display) :
                 turret.recenter()
             if KeyboardPoller.key=="r": #sample center of image
                 print "reloading"
-                turret.reload()
+                turret.reloadGun()
             elif KeyboardPoller.key=="1": #start motion detect
                 print "Start motion detect."
                 modemotion = True
