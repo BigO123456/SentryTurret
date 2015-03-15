@@ -34,5 +34,21 @@ The program starts a thread for the turret which is continually updated with tar
 
 ---
 
+To use manual control run sudo python manual.py
+Manual Control for Sentry Turret
+
+' ' = reset
+w = move up
+a = move left
+s = move down
+d = move right
+f = fire
+x = trigger buzzers
+b = fire left
+n = fire right
+
+Add a joystick for added enjoyment use JoyToKey http://joytokey.net/en/ 
+
+
 The working example was built on RaspberryPi2 with Raspian and OpenCV(python) 2.4, using GPIO pins connected to a servo hat from adafruit. https://learn.adafruit.com/adafruit-16-channel-pwm-servo-hat-for-raspberry-pi/overview
 relay board is the fire control system
