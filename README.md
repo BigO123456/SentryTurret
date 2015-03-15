@@ -34,17 +34,25 @@ The program starts a thread for the turret which is continually updated with tar
 
 ---
 
-To use manual control run sudo python manual.py
+To use manual control run go to the driver folder and run sudo python manual.py
 Manual Control for Sentry Turret
 
 ' ' = reset
+
 w = move up
+
 a = move left
+
 s = move down
+
 d = move right
+
 f = fire
+
 x = trigger buzzers
+
 b = fire left
+
 n = fire right
 
 Add a joystick for added enjoyment use JoyToKey http://joytokey.net/en/ 
