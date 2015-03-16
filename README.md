@@ -43,6 +43,8 @@ sudo nano /etc/default/motion   set start_motion_daemon=yes
 
 then copy the motion.conf file to /etc/motion/motion.conf
 
+motion will run on port 8081
+
 Manual Control for Sentry Turret
 
 ' ' = reset
