@@ -55,8 +55,10 @@ b = fire left
 
 n = fire right
 
-Add a joystick for added enjoyment use JoyToKey http://joytokey.net/en/ 
+p = Spray
 
+Add a joystick for added enjoyment use JoyToKey http://joytokey.net/en/ 
+![image](https://scontent-lga.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10551111_10102040449359939_1193606793478368655_n.jpg?oh=4afb9d2e38645f1eda55b1fe9584a000&oe=558AADE1)
 
 The working example was built on RaspberryPi2 with Raspian and OpenCV(python) 2.4, using GPIO pins connected to a servo hat from adafruit. https://learn.adafruit.com/adafruit-16-channel-pwm-servo-hat-for-raspberry-pi/overview
 relay board is the fire control system
