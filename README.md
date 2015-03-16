@@ -35,6 +35,10 @@ The program starts a thread for the turret which is continually updated with tar
 ---
 
 To use manual control run go to the driver folder and run sudo python manual.py
+before you run it make sure to install motion and configure it using motion.conf provided
+sudo apt-get install motion
+sudo nano /etc/default/motion   set start_motion_daemon=yes
+then copy the motion.conf file to /etc/motion/motion.conf
 Manual Control for Sentry Turret
 
 ' ' = reset
