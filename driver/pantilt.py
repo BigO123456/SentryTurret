@@ -11,7 +11,7 @@ TILT = 3
 PAN  = 0
 BOOM = 15
 
-def boom(deg)
+def boom(deg):
   _turn(BOOM,deg)
   
 def pan(deg):
