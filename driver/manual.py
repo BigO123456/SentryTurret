@@ -68,7 +68,6 @@ while True:
          GPIO.setup(29, GPIO.OUT) ## Setup GPIO Pin 5 to OUT
          GPIO.output(29,True) ## Turn on GPIO pin 5
          sleep(2)
-         boom(255)
          GPIO.output(12,False) ## Turn off GPIO pin 18
          GPIO.output(29,False) ## Turn off GPIO pin 5
       if KeyboardPoller.key==" ": #reset all
