@@ -126,7 +126,7 @@ def main(display) :
         #wait for motion
         if hsvtarget == None and modemotion == True: 
             if not avgstarted:
-                print "accumulating average..."  
+                print ("accumulating average...")  
                 Timer.Countdown(5, avgtimer).thread.start()
                 sleep(.1) #timer set
                 avgstarted = True   
@@ -134,7 +134,7 @@ def main(display) :
                 cv2.accumulateWeighted(cam.frame, avgframe, 0.8) 
                 resframe = cv2.convertScaleAbs(avgframe)
             else:   
-                print "waiting for motion..."   
+                print ("waiting for motion...")   
                 #mask all motion  
                 motionmask = cv2.absdiff(cam.frame, resframe)
                 motionmask = cv2.cvtColor(motionmask, cv2.COLOR_RGB2GRAY)
@@ -169,26 +169,26 @@ def main(display) :
             if KeyboardPoller.key=="a":
                 turret.moveLeft()
             elif KeyboardPoller.key=="q": #quit
-                print "Exiting..."
+                print ("Exiting...")
                 turret.quit()
                 cam.quit()
                 cv2.destroyAllWindows()
                 break
             elif KeyboardPoller.key==" ": #reset all
-                print "Reset."
+                print (Reset.)
                 hsvtarget = None
                 turret.armed = True
                 avgstarted = False
                 warningstarted = False
                 turret.recenter()
             if KeyboardPoller.key=="r": #sample center of image
-                print "reloading"
+                print ("reloading")
                 turret.reloadGun()
             elif KeyboardPoller.key=="1": #start motion detect
-                print "Start motion detect."
+                print ("Start motion detect.")
                 modemotion = True
             if KeyboardPoller.key=="2": #sample center of image
-                print "Sample center HSV."                       
+                print ("Sample center HSV.")                       
                 framecenter = cam.frame[(dims.h/2)-dims.sampleradius:(dims.h/2)+dims.sampleradius, (dims.w/2)-dims.sampleradius:(dims.w/2)+dims.sampleradius]
                 framecenterhsv = cv2.cvtColor(framecenter, cv2.COLOR_BGR2HSV)
                 hsvtarget = [int(cv2.mean(framecenterhsv)[0]), int(cv2.mean(framecenterhsv)[1]), int(cv2.mean(framecenterhsv)[2])]
@@ -196,9 +196,9 @@ def main(display) :
             if KeyboardPoller.key=="p": #toggle armed
                 turret.armed = not turret.armed       
             if KeyboardPoller.key=="f": #reset all
-                print "Firing"
+                print ("Firing")
                 turret.fire()
-                print "Fired"
+                print ("Fired")
             if KeyboardPoller.key=="l": #target trigger sensitivity
                 turret.firesensitivity += .01
             if KeyboardPoller.key=="m":
@@ -222,27 +222,27 @@ def main(display) :
                 #adjust target settings/range
             if not hsvtarget == None:
                 dims.setHsvRange(hsvtarget)
-                print ">> HSV:",hsvtarget[0],hsvtarget[1],hsvtarget[2],"Range:",dims.hsvrange[0],dims.hsvrange[1],dims.hsvrange[2],"Area:",dims.areathreshold,"Armed:",turret.armed,turret.firesensitivity
+                print (">> HSV:",hsvtarget[0],hsvtarget[1],hsvtarget[2],"Range:",dims.hsvrange[0],dims.hsvrange[1],dims.hsvrange[2],"Area:",dims.areathreshold,"Armed:",turret.armed,turret.firesensitivity)
             #reset key polling
             KeyboardPoller.WaitKey().thread.start()
         
 if __name__ == "__main__" :
-    print "=========================="
-    print "Terminal Commands:"
-    print "q = quit"
-    print "' ' = reset"
-    print "1 = start motion detect"
-    print "2 = sample center for target"
-    print "f/v = +/- threshhold area"
-    print "a,s,d/z,x,c = +/- H,S,V"
-    print "p = toggle armed"
-    print "l/m = +/- target sensitivity"
-    print "=========================="
+    print ("==========================")
+    print ("Terminal Commands:")
+    print ("q = quit")
+    print ("' ' = reset")
+    print ("1 = start motion detect")
+    print ("2 = sample center for target")
+    print ("f/v = +/- threshhold area")
+    print ("a,s,d/z,x,c = +/- H,S,V")
+    print ("p = toggle armed")
+    print (/m = +/- target sensitivity")
+    print ("==========================")
     display = 0 #default
     try:
         display = int(sys.argv[1])
     except:
-        print "Usage: 0=none/default, 1=display"
+        print ("Usage: 0=none/default, 1=display")
     #start
     sys.exit(main(display))
     
