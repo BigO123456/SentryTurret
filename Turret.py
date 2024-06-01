@@ -40,7 +40,7 @@ class Controller(threading.Thread) :
         threading.Thread.__init__(self)
         
     def fire(self): #pull trigger
-	GPIO.setup(18, GPIO.OUT) ## Setup GPIO Pin 24 to OUT
+	GPIO.setup(18,GPIO.OUT) ## Setup GPIO Pin 24 to OUT
 	GPIO.output(18,True) ## Turn on GPIO pin 24
 	sleep(3)
 	GPIO.output(18,False) ## Turn off GPIO pin 24
