@@ -175,7 +175,7 @@ def main(display) :
                 cv2.destroyAllWindows()
                 break
             elif KeyboardPoller.key==" ": #reset all
-                print (Reset.)
+                print ("Reset.")
                 hsvtarget = None
                 turret.armed = True
                 avgstarted = False
@@ -236,7 +236,7 @@ if __name__ == "__main__" :
     print ("f/v = +/- threshhold area")
     print ("a,s,d/z,x,c = +/- H,S,V")
     print ("p = toggle armed")
-    print (/m = +/- target sensitivity)
+    print ("/m = +/- target sensitivity")
     print ("==========================")
     display = 0 #default
     try:
